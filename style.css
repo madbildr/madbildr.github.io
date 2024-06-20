@@ -1,43 +1,108 @@
-﻿body, html {
+﻿body {
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.top-menu {
+    background-color: #121212;
+    color: #ffffff;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #333;
-    padding: 10px;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.logo {
-    height: 50px; /* Adjust based on your logo's size */
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.timeline-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
 }
 
 .timeline {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+}
+
+.timeline-event {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+.timeline-event.left .content {
+    margin-right: auto;
+    text-align: right;
+}
+
+.timeline-event.right .content {
+    margin-left: auto;
+    text-align: left;
+}
+
+.timeline-event .content {
+    background-color: #1e1e1e;
+    border-radius: 8px;
     padding: 20px;
+    width: 45%;
 }
 
-.timeline-item {
-    margin: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    width: 80%; /* Adjust based on preference */
+.timeline-event .date {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-    .timeline-item img {
-        max-width: 100%;
-        height: auto;
+.timeline-event img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.timeline-event .soundcloud {
+    margin-top: 10px;
+}
+
+.branch {
+    width: 2px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left-branch {
+    left: 50%;
+    height: 150px;
+    border-radius: 0 8px 8px 0;
+}
+
+.right-branch {
+    right: 50%;
+    height: 150px;
+    border-radius: 8px 0 0 8px;
+}
+
+@media (min-width: 768px) {
+    .timeline-event.left .branch {
+        left: calc(50% - 50px);
     }
-
-@media (max-width: 600px) {
-    .timeline-item {
-        width: 95%;
+    
+    .timeline-event.right .branch {
+        right: calc(50% - 50px);
     }
 }
