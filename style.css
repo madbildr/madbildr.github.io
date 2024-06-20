@@ -1,4 +1,4 @@
-﻿body {
+body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
@@ -27,6 +27,7 @@ h1 {
 .header-image {
     width: 100%;
     max-width: 800px;
+    max-height: 300px; /* Add a maximum height to resize the image */
     margin: 20px 0; /* Add margin to separate from the title and the timeline image */
 }
 
