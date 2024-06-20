@@ -24,6 +24,12 @@ h1 {
     text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.7); /* Reddish shadow */
 }
 
+.header-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0; /* Add margin to separate from the title and the timeline image */
+}
+
 .timeline-image {
     width: 100%;
     max-width: 800px;
