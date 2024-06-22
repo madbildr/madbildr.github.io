@@ -92,7 +92,8 @@ h1 {
     top: 50%;
     transform: translateY(-50%);
 }
-#more {
+#more 
+{
     display: none;
 }
 .left-branch {
