@@ -92,7 +92,9 @@ h1 {
     top: 50%;
     transform: translateY(-50%);
 }
-
+#more {
+    display: none;
+}
 .left-branch {
     left: 50%;
     height: 150px;
