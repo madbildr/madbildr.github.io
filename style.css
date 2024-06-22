@@ -97,12 +97,7 @@ h2 {
     margin-top: 10px;
 }
 
-.branch {
-    width: 2px;
-    background-color: #ffffff;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+
 }
 #more 
 {
