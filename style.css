@@ -54,7 +54,7 @@ h1 {
 
 .timeline-event.left .content {
     margin-right: auto;
-    text-align: right;
+    text-align: left;
 }
 
 .timeline-event.right .content {
