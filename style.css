@@ -24,6 +24,12 @@ h1 {
     text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.7); /* Reddish shadow */
 }
 
+h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    
+}
+
 .header-image {
     width: 100%;
     max-width: 800px;
