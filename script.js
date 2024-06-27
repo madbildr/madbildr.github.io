@@ -45,3 +45,23 @@ document.addEventListener('click', function (event) {
     }
 });
 
+// Lazy loading for iframes
+document.addEventListener("DOMContentLoaded", function () {
+    let lazyIframes = document.querySelectorAll('iframe[data-src]');
+
+    let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let iframe = entry.target;
+                iframe.src = iframe.getAttribute('data-src');
+                iframe.removeAttribute('data-src');
+                observer.unobserve(iframe);
+            }
+        });
+    });
+
+    lazyIframes.forEach(iframe => {
+        observer.observe(iframe);
+    });
+});
+
