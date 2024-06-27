@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Lausse The Cat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu-icon" id="menuIcon">
+        <img src="menu-icon.png" alt="Menu Icon">
+    </div>
+    <div class="side-menu" id="sideMenu">
+        <a href="index.html">
+            <img src="home-icon.png" alt="Home Icon" class="menu-item">
+        </a>
+        <a href="gallery.html">
+            <img src="gallery-icon.png" alt="Gallery Icon" class="menu-item">
+        </a>
+    </div>
+    <div class="container">
+        <h1>About Lausse The Cat</h1>
+        <img src="about-image.jpg" alt="About Image" class="about-image">
+        <p>
+            Lausse The Cat is a mysterious and intriguing artist known for their unique sound and captivating lyrics. 
+            This page is dedicated to providing a brief overview of the artist, their inspirations, and their journey in the music world.
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

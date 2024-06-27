@@ -63,7 +63,7 @@ body {
 h1 {
     font-size: 3em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.7); /* Reddish shadow */
+    
 }
 
 h2 {
@@ -73,6 +73,13 @@ h2 {
 }
 
 .header-image {
+    width: 100%;
+    max-width: 800px;
+    max-height: 700px; /* Add a maximum height to resize the image */
+    margin: 20px 0; /* Add margin to separate from the title and the timeline image */
+}
+
+.about-image {
     width: 100%;
     max-width: 800px;
     max-height: 700px; /* Add a maximum height to resize the image */
