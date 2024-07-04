@@ -81,8 +81,8 @@ h2 {
 
 .about-image {
     width: 100%;
-    max-width: 800px;
-    max-height: 700px; /* Add a maximum height to resize the image */
+    max-width: 500px;
+    max-height: 500px; /* Add a maximum height to resize the image */
     margin: 20px 0; /* Add margin to separate from the title and the timeline image */
 }
 .title-image {
