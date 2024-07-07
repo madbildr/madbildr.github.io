@@ -20,7 +20,7 @@ function myFunction() {
     var moreText = document.getElementById("more");
     var btnText = document.getElementById("myBtn");
 
-    if (dots.style.display === "none") {
+    if (dots.style.display === "...") {
         dots.style.display = "inline";
         btnText.innerHTML = "Read Lyrics";
         moreText.style.display = "none";
