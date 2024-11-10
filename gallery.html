@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FNP3DDPTN"></script>
@@ -8,12 +7,9 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-3FNP3DDPTN');
     </script>
-    
-    
-    
+
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,17 +20,19 @@
             position: relative;
             max-width: 600px;
             margin: auto;
-            overflow: hidden;
+            overflow: hidden; /* Hide images outside the view */
         }
 
         .carousel {
             display: flex;
             transition: transform 0.5s ease;
+            width: 100%; /* This will be adjusted with JavaScript */
         }
 
             .carousel img {
-                width: 100%;
+                width: 100%; /* Each image takes the width of the container */
                 border-radius: 10px;
+                flex-shrink: 0; /* Prevent images from shrinking */
             }
 
         /* Arrow buttons */
@@ -58,6 +56,13 @@
         .arrow-right {
             right: 10px;
         }
+
+        /* Indicator styling */
+        .indicator {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -65,28 +70,43 @@
     <div class="carousel-container">
         <!-- Carousel items -->
         <div class="carousel" id="carousel">
-            <img src="image1.jpg" alt="Image 1">
-            <img src="image2.jpg" alt="Image 2">
-            <img src="image3.jpg" alt="Image 3">
+            <img src="Gallery-1.jpg" alt="Image 1">
+            <img src="Gallery-2.jpg" alt="Image 2">
+            <img src="Gallery-3.jpg" alt="Image 3">
+            <img src="Gallery-4.jpg" alt="Image 4">
+            <img src="Gallery-5.jpg" alt="Image 5">
+            <img src="Gallery-6.jpg" alt="Image 6">
+            <img src="Gallery-7.jpg" alt="Image 7">
+            <img src="Gallery-8.jpg" alt="Image 8">
+            <img src="Gallery-9.jpg" alt="Image 9">
         </div>
 
         <!-- Left and Right Arrows -->
         <button class="arrow arrow-left" onclick="scrollCarousel(-1)">&#10094;</button>
         <button class="arrow arrow-right" onclick="scrollCarousel(1)">&#10095;</button>
+
+        <!-- Indicator -->
+        <div class="indicator" id="indicator">Image 1 of 9</div>
     </div>
 
-    <script>let currentIndex = 0;
+    <script>
+        let currentIndex = 0;
 
-  function scrollCarousel(direction) {
-    const carousel = document.getElementById('carousel');
-    const items = carousel.children.length;
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('carousel');
+            const indicator = document.getElementById('indicator');
+            const items = carousel.children.length;
 
-    // Update index and loop around if necessary
-    currentIndex = (currentIndex + direction + items) % items;
+            // Update index and loop around if necessary
+            currentIndex = (currentIndex + direction + items) % items;
 
-    // Apply transform to slide carousel
-    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }</script>
+            // Calculate and apply transform based on currentIndex
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Update indicator text
+            indicator.textContent = `Image ${currentIndex + 1} of ${items}`;
+        }
+    </script>
 
 </body>
 </html>
