@@ -66,47 +66,61 @@
     </style>
 </head>
 <body>
+    <div class="menu-icon" id="menuIcon">
+        <img src="menu-icon.png" alt="Menu Icon">
+    </div>
+    <div class="side-menu" id="sideMenu">
+        <a href="index.html">
+            <img src="home-icon.png" alt="Home Icon" class="menu-item">
+        </a>
+        <a href="gallery.html">
+            <img src="gallery-icon.png" alt="Gallery Icon" class="menu-item">
+        </a>
+    </div>
+    <div class="container">
+        <img src="LausseTextTitle.jpg" alt="Header Image" class="title-image">
+        <h1>Gallery</h1>
 
-    <div class="carousel-container">
-        <!-- Carousel items -->
-        <div class="carousel" id="carousel">
-            <img src="Gallery-1.jpg" alt="Image 1">
-            <img src="Gallery-2.jpg" alt="Image 2">
-            <img src="Gallery-3.jpg" alt="Image 3">
-            <img src="Gallery-4.jpg" alt="Image 4">
-            <img src="Gallery-5.jpg" alt="Image 5">
-            <img src="Gallery-6.jpg" alt="Image 6">
-            <img src="Gallery-7.jpg" alt="Image 7">
-            <img src="Gallery-8.jpg" alt="Image 8">
-            <img src="Gallery-9.jpg" alt="Image 9">
+        <div class="carousel-container">
+            <!-- Carousel items -->
+            <div class="carousel" id="carousel">
+                <img src="Gallery-1.jpg" alt="Image 1">
+                <img src="Gallery-2.jpg" alt="Image 2">
+                <img src="Gallery-3.jpg" alt="Image 3">
+                <img src="Gallery-4.jpg" alt="Image 4">
+                <img src="Gallery-5.jpg" alt="Image 5">
+                <img src="Gallery-6.jpg" alt="Image 6">
+                <img src="Gallery-7.jpg" alt="Image 7">
+                <img src="Gallery-8.jpg" alt="Image 8">
+                <img src="Gallery-9.jpg" alt="Image 9">
+            </div>
+
+            <!-- Left and Right Arrows -->
+            <button class="arrow arrow-left" onclick="scrollCarousel(-1)">&#10094;</button>
+            <button class="arrow arrow-right" onclick="scrollCarousel(1)">&#10095;</button>
+
+            <!-- Indicator -->
+            <div class="indicator" id="indicator">Image 1 of 9</div>
         </div>
 
-        <!-- Left and Right Arrows -->
-        <button class="arrow arrow-left" onclick="scrollCarousel(-1)">&#10094;</button>
-        <button class="arrow arrow-right" onclick="scrollCarousel(1)">&#10095;</button>
+        <script>
+            let currentIndex = 0;
 
-        <!-- Indicator -->
-        <div class="indicator" id="indicator">Image 1 of 9</div>
-    </div>
+            function scrollCarousel(direction) {
+                const carousel = document.getElementById('carousel');
+                const indicator = document.getElementById('indicator');
+                const items = carousel.children.length;
 
-    <script>
-        let currentIndex = 0;
+                // Update index and loop around if necessary
+                currentIndex = (currentIndex + direction + items) % items;
 
-        function scrollCarousel(direction) {
-            const carousel = document.getElementById('carousel');
-            const indicator = document.getElementById('indicator');
-            const items = carousel.children.length;
+                // Calculate and apply transform based on currentIndex
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-            // Update index and loop around if necessary
-            currentIndex = (currentIndex + direction + items) % items;
-
-            // Calculate and apply transform based on currentIndex
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            // Update indicator text
-            indicator.textContent = `Image ${currentIndex + 1} of ${items}`;
-        }
-    </script>
+                // Update indicator text
+                indicator.textContent = `Image ${currentIndex + 1} of ${items}`;
+            }
+        </script>
 
 </body>
 </html>
