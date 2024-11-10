@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FNP3DDPTN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-3FNP3DDPTN');
+    </script>
+    
+    
+    
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        /* Basic styling */
+        .carousel-container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+            .carousel img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+        /* Arrow buttons */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 2rem;
+            padding: 0.5rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="carousel-container">
+        <!-- Carousel items -->
+        <div class="carousel" id="carousel">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+
+        <!-- Left and Right Arrows -->
+        <button class="arrow arrow-left" onclick="scrollCarousel(-1)">&#10094;</button>
+        <button class="arrow arrow-right" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+
+    <script>let currentIndex = 0;
+
+  function scrollCarousel(direction) {
+    const carousel = document.getElementById('carousel');
+    const items = carousel.children.length;
+
+    // Update index and loop around if necessary
+    currentIndex = (currentIndex + direction + items) % items;
+
+    // Apply transform to slide carousel
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }</script>
+
+</body>
+</html>
