@@ -14,6 +14,7 @@ function LyricsFunction() {
     }
 }
 
+
 function myFunction() {
     console.log("myFunction called"); // Debugging statement
     var dots = document.getElementById("dots");
@@ -44,6 +45,33 @@ document.addEventListener('click', function (event) {
         document.body.classList.remove('menu-open');
     }
 });
+// Update JavaScript to target each song section within a year
+const yearSections = document.querySelectorAll('.timeline-event');
+const yearLinks = document.querySelectorAll('.year-link');
+
+function highlightYearOnScroll() {
+    let currentYear = null;
+
+    yearSections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top < window.innerHeight) {
+            // Extract year from ID (e.g., "year-2015-event-1" -> "2015")
+            const year = section.id.split('-')[1];
+            currentYear = year;
+        }
+    });
+
+    yearLinks.forEach((link) => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(currentYear)) {
+            link.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', highlightYearOnScroll);
+
+
 
 // Lazy loading for iframes
 document.addEventListener("DOMContentLoaded", function () {

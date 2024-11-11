@@ -44,6 +44,39 @@ body {
         margin: 20px 0;
     }
 
+/* Sidebar styling */
+.year-nav {
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    background-color: #f3f3f3;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .year-nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .year-nav li {
+        margin: 0.5rem 0;
+    }
+
+    .year-nav a {
+        text-decoration: none;
+        color: #333;
+    }
+
+        .year-nav a:hover {
+            color: #0073e6;
+        }
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
 .menu-item {
     width: 200px; /* Adjust the size of your custom menu icons */
     height: auto;
@@ -71,6 +104,34 @@ h2 {
     margin-bottom: 20px;
     
 }
+
+.year-link.active {
+    background-color: lightgray;
+    font-weight: bold;
+}
+
+/* Style for the right-hand menu */
+.year-nav {
+    background-color: #d3d3d3; /* Light grey color */
+    padding: 10px;
+    border-radius: 8px; /* Optional: add rounded corners */
+}
+
+/* Style for each link in the menu */
+.year-link {
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make links stack vertically */
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 5px; /* Space between links */
+}
+
+    /* Highlighted (active) link style */
+    .year-link.active {
+        background-color: #a9a9a9; /* Darker grey for active link */
+        font-weight: bold;
+    }
 
 .header-image {
     width: 100%;
