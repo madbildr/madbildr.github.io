@@ -1,0 +1,175 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+    .menu-icon img {
+        width: 10%;
+        height: auto;
+    }
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Hide the menu offscreen initially */
+    width: 200px;
+    height: 100%;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+    .side-menu a {
+        display: block;
+        margin: 20px 0;
+    }
+
+.menu-item {
+    width: 200px; /* Adjust the size of your custom menu icons */
+    height: auto;
+}
+
+.menu-open .side-menu {
+    left: 0; /* Slide the menu into view */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    
+}
+
+h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    
+}
+
+.header-image {
+    width: 100%;
+    max-width: 800px;
+    max-height: 700px; /* Add a maximum height to resize the image */
+    margin: 20px 0; /* Add margin to separate from the title and the timeline image */
+}
+
+.about-image {
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px; /* Add a maximum height to resize the image */
+    margin: 20px 0; /* Add margin to separate from the title and the timeline image */
+}
+.title-image {
+    width: 100%;
+    max-width: 200px;
+    max-height: 200px; /* Add a maximum height to resize the image */
+    margin: 20px 0; /* Add margin to separate from the title and the timeline image */
+}
+
+.timeline-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.timeline-event {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+.timeline-event.left .content {
+    margin-right: auto;
+    text-align: left;
+}
+
+.timeline-event.right .content {
+    margin-left: auto;
+    text-align: left;
+}
+
+.timeline-event .content {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    width: 45%;
+}
+
+.timeline-event .date {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.timeline-event img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.timeline-event .soundcloud {
+    margin-top: 10px;
+}
+
+
+}
+#more 
+{
+    display: none;
+}
+.left-branch {
+    left: 50%;
+    height: 150px;
+    border-radius: 0 8px 8px 0;
+}
+
+.right-branch {
+    right: 50%;
+    height: 150px;
+    border-radius: 8px 0 0 8px;
+}
+
+@media (min-width: 768px) {
+    .timeline-event.left .branch {
+        left: calc(50% - 50px);
+    }
+    
+    .timeline-event.right .branch {
+        right: calc(50% - 50px);
+    }
+}
